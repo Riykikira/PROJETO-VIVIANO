@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - UNINASSAU S.A</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">UNINASSAU  </a>
+            <div class="d-flex">
+                <span class="navbar-text text-white me-3">
+                    Operador: <strong>João Silva</strong>
+                </span>
+                <a href="index.html" class="btn btn-outline-light btn-sm">Sair</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar (simulated) -->
+            <div class="col-md-2 d-none d-md-block bg-white sidebar shadow-sm rounded p-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link active" href="#"><i class="fas fa-tachometer-alt me-2"></i> Visão Geral</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-dark" href="#"><i class="fas fa-barrier me-2"></i> Cancelas</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-dark" href="#"><i class="fas fa-users me-2"></i> Usuários</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-dark" href="#"><i class="fas fa-file-invoice-dollar me-2"></i> Relatórios</a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <button class="btn btn-danger w-100"><i class="fas fa-exclamation-triangle me-2"></i> Emergência</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-10">
+                <h2 class="mb-4">Painel Operacional (RF-017)</h2>
+
+                <!-- Status Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-header">Cancela Entrada 01</div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-check-circle"></i> ONLINE</h5>
+                                <p class="card-text">Fluxo normal. Última passagem: 10:42</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-header">Cancela Saída 01</div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-check-circle"></i> ONLINE</h5>
+                                <p class="card-text">Fluxo normal. Última passagem: 10:40</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-warning mb-3">
+                            <div class="card-header">Ocupação</div>
+                            <div class="card-body">
+                                <h5 class="card-title">85%</h5>
+                                <p class="card-text">170/200 Vagas Ocupadas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-info mb-3">
+                            <div class="card-header">Receita Hoje</div>
+                            <div class="card-body">
+                                <h5 class="card-title">R$ 1.250,00</h5>
+                                <p class="card-text">45 Tickets Visitantes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Events Table -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Eventos Recentes</h5>
+                        <button class="btn btn-sm btn-primary">Ver Todos</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Hora</th>
+                                        <th>Evento</th>
+                                        <th>Detalhe</th>
+                                        <th>Status</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10:42:15</td>
+                                        <td>Entrada Automática</td>
+                                        <td>Placa ABC-1234 (Aluno)</td>
+                                        <td><span class="badge bg-success">Sucesso</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary">Detalhes</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:40:05</td>
+                                        <td>Saída Automática</td>
+                                        <td>Placa XYZ-9876 (Func)</td>
+                                        <td><span class="badge bg-success">Sucesso</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary">Detalhes</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:35:22</td>
+                                        <td>Falha Leitura</td>
+                                        <td>Cancela Entrada 01</td>
+                                        <td><span class="badge bg-danger">Erro</span></td>
+                                        <td><button class="btn btn-sm btn-warning">Resolver</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:30:00</td>
+                                        <td>Abertura Manual</td>
+                                        <td>Operador João (Motivo: Ambulância)</td>
+                                        <td><span class="badge bg-warning text-dark">Auditado</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary">Log</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manual Control Actions -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-danger text-white">
+                                <i class="fas fa-hand-paper me-2"></i> Controle Manual de Cancelas
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="cancelaSelect" class="form-label">Selecionar Cancela</label>
+                                        <select class="form-select" id="cancelaSelect">
+                                            <option>Entrada 01</option>
+                                            <option>Saída 01</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="motivoSelect" class="form-label">Motivo da Abertura</label>
+                                        <select class="form-select" id="motivoSelect">
+                                            <option>Falha na Leitura</option>
+                                            <option>Veículo de Emergência</option>
+                                            <option>Manutenção</option>
+                                            <option>Outro (Especificar)</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="btn btn-danger w-100">Liberar Cancela</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
