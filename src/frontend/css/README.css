@@ -1,0 +1,250 @@
+/* ===============================================
+   README.CSS - Documentação de Estrutura de Estilos
+   ===============================================
+   
+   ORGANIZAÇÃO DOS ARQUIVOS CSS
+   ============================
+   
+   Este documento descreve como os estilos CSS estão organizados
+   no projeto "Sistema de Controle de Cancelas de Estacionamento".
+
+   ESTRUTURA:
+   ----------
+   css/
+   ├── styles.css          (Estilos globais + base)
+   ├── visitante.css       (RF-012: Sistema de Pagamento Visitante)
+   ├── recarga.css         (RF-009: Recarga de Créditos Pré-pagos)
+   └── README.css          (Este arquivo)
+
+   ===============================================
+   
+   1. STYLES.CSS (Arquivo Global)
+   ==============================
+   
+   Responsável por:
+   - Fontes e família tipográfica global
+   - Estilos do body
+   - Componentes reutilizáveis (cards, navbar, etc)
+   - Tema de cores base
+   - Responsividade geral
+   
+   Afeta: Todos os arquivos HTML
+   
+   Classes principais:
+   - .navbar (personalizado com fundo amarelo)
+   - .sidebar (para dashboard)
+   - .card (componente Bootstrap customizado)
+   - .nav-link (links de navegação)
+   
+   ===============================================
+   
+   2. VISITANTE.CSS (Página de Visitante)
+   ======================================
+   
+   Arquivo HTML: visitante.html
+   Requisito: RF-012 - Controle de Acesso Visitante
+   
+   Responsável por:
+   - Layout e design do sistema de pagamento
+   - Estilo de cards de ticket
+   - Informações de tempo e valor
+   - Botões de ação (pagamento)
+   - Mensagens de sucesso/erro
+   - Animações de transição
+   
+   Classes CSS:
+   
+   .ticket-container
+   └─ Gradiente roxo/lilás, container principal
+   
+   .ticket-info
+   └─ Caixa com borda dourada para informações
+   
+   .valor-pagar
+   └─ Seção destacada do valor a pagar
+   
+   .valor-total
+   └─ Texto grande e em destaque do valor total
+   
+   .status-badge
+   └─ Badge verde indicando status do veículo
+   
+   .info-grid
+   └─ Grid com 2 colunas para informações do ticket
+   
+   .info-item
+   └─ Item individual de informação
+   
+   .btn-pagar
+   └─ Botão verde de ação com hover effects
+   
+   .success-message / .error-message
+   └─ Mensagens com animação slideIn
+   
+   Cores utilizadas:
+   - Roxo: #667eea, #764ba2 (gradiente)
+   - Dourado: #FFD700 (realce)
+   - Verde: #4CFF00 (ação)
+   - Branco: #FFFFFF (texto principal)
+   
+   ===============================================
+   
+   3. RECARGA.CSS (Página de Recarga de Saldo)
+   ===========================================
+   
+   Arquivo HTML: recarga.html
+   Requisito: RF-009 - Recarga de Créditos Pré-pagos
+   
+   Responsável por:
+   - Layout da tela de recarga
+   - Seleção de valores pré-definidos
+   - Seleção de método de pagamento
+   - Resumo da recarga
+   - Feedback visual
+   - Animações
+   
+   Classes CSS:
+   
+   .recarga-container
+   └─ Container principal com gradiente
+   
+   .valor-option
+   └─ Card clicável para seleção de valor
+   └─ States: hover, .selected
+   
+   .valor-amount / .valor-label
+   └─ Textos dentro de valor-option
+   
+   .metodo-option
+   └─ Card clicável para seleção de método
+   └─ Estados: hover, .selected
+   
+   .metodo-icon / .metodo-name / .metodo-desc
+   └─ Componentes internos do método
+   
+   .resumo-recarga
+   └─ Seção de resumo com itens
+   
+   .resumo-item / .resumo-label / .resumo-valor
+   └─ Componentes do resumo
+   
+   .btn-confirmar
+   └─ Botão verde de confirmação
+   
+   .success-message / .success-icon
+   └─ Mensagem de sucesso com ícone grande
+   
+   .info-custom
+   └─ Box de informações com destaque
+   
+   Cores utilizadas:
+   - Roxo: #667eea, #764ba2 (gradiente)
+   - Dourado: #FFD700 (valores)
+   - Verde: #4CFF00 (seleção de método)
+   - Branco: #FFFFFF (texto)
+   
+   ===============================================
+   
+   GUIA DE CORES DO SISTEMA
+   ========================
+   
+   Primária (Roxo/Lilás):
+   - Base escura: #667eea
+   - Base clara: #764ba2
+   - Uso: Containers, gradientes, fundos
+   
+   Destaque (Dourado):
+   - Cor: #FFD700
+   - Uso: Valores, informações importantes
+   
+   Ação (Verde Limão):
+   - Cor: #4CFF00
+   - Uso: Botões, seleções, confirmações
+   
+   Sucesso (Verde escuro):
+   - Cor: #28a745 (Bootstrap padrão)
+   - Uso: Mensagens de sucesso
+   
+   Avisos (Vermelho):
+   - Cor: #721c24 (Bootstrap padrão)
+   - Uso: Mensagens de erro
+   
+   ===============================================
+   
+   ANIMAÇÕES UTILIZADAS
+   ====================
+   
+   slideIn (Visitante e Recarga):
+   - Efeito de slide suave da esquerda/topo
+   - Duração: 0.5s
+   - Timing: ease-in
+   - Uso: Mensagens de sucesso
+   
+   Hover Effects:
+   - Botões: scale() + box-shadow
+   - Cards de valor: translateX()
+   - Métodos de pagamento: scale()
+   - Duração: 0.3s
+   
+   ===============================================
+   
+   RESPONSIVIDADE
+   ===============
+   
+   Breakpoints utilizados (Bootstrap 5):
+   - xs: < 576px (mobile)
+   - sm: ≥ 576px (tablet pequeno)
+   - md: ≥ 768px (tablet)
+   - lg: ≥ 992px (desktop pequeno)
+   - xl: ≥ 1200px (desktop)
+   
+   Layouts responsivos implementados:
+   
+   visitante.html:
+   - info-grid: 1 coluna (xs-md), 2 colunas (lg+)
+   
+   recarga.html:
+   - Container centralizado com max-width
+   - Valores e métodos: stack vertical responsivo
+   
+   ===============================================
+   
+   COMO ADICIONAR NOVOS ESTILOS
+   =============================
+   
+   1. Para estilos de uma página específica:
+      → Crie um arquivo: css/novapage.css
+      → Adicione no head: <link rel="stylesheet" href="css/novapage.css">
+      → Documente os requisitos e classes
+   
+   2. Para estilos globais:
+      → Adicione em: css/styles.css
+      → Documente a finalidade
+      → Considere impacto em outras páginas
+   
+   3. Padrão de nomenclatura CSS:
+      → Use nomes descritivos e em inglês
+      → Separar palavras com hífen: .btn-confirmar
+      → Evitar IDs, preferir classes
+      → Manter simplicidade e reutilização
+   
+   4. Estrutura de arquivo CSS:
+      - Header com comentário explicativo
+      - Agrupamento por componente
+      - Especificidade baixa
+      - Media queries ao final
+   
+   ===============================================
+   
+   CONTROLE DE VERSÃO
+   ===================
+   
+   Última atualização: 23 de novembro de 2025
+   Versão: 1.0 (beta)
+   
+   Arquivos CSS criados:
+   - visitante.css (1.0)
+   - recarga.css (1.0)
+   
+   ===============================================
+*/

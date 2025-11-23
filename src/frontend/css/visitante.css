@@ -1,0 +1,149 @@
+/* ===============================================
+   VISITANTE.CSS - Estilos para Sistema de Pagamento Visitante
+   ===============================================
+   Arquivo: visitante.html
+   Responsável: RF-012 - Controle de Acesso Visitante
+   =============================================== */
+
+.ticket-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 40px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.ticket-info {
+    background-color: rgba(255,255,255,0.1);
+    border-left: 4px solid #FFD700;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.time-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #FFD700;
+    font-family: 'Courier New', monospace;
+}
+
+.valor-pagar {
+    background-color: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.valor-pagar h3 {
+    color: #FFD700;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.valor-total {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(76, 255, 0, 0.3);
+    color: #4CFF00;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.info-item {
+    background-color: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.info-item label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-item .value {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.btn-pagar {
+    background-color: #4CFF00;
+    color: #333;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-pagar:hover {
+    background-color: #3dd700;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76, 255, 0, 0.4);
+}
+
+.btn-pagar:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+.success-message {
+    display: none;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.success-message.show {
+    display: block;
+    animation: slideIn 0.5s ease-in;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.error-message {
+    display: none;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.error-message.show {
+    display: block;
+}

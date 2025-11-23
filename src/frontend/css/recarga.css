@@ -1,0 +1,180 @@
+/* ===============================================
+   RECARGA.CSS - Estilos para Tela de Recarga de Saldo
+   ===============================================
+   Arquivo: recarga.html
+   Responsável: RF-009 - Recarga de Créditos Pré-pagos
+   =============================================== */
+
+.recarga-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 40px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.valor-option {
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid transparent;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 15px;
+}
+
+.valor-option:hover {
+    background-color: rgba(255,255,255,0.15);
+    transform: translateX(5px);
+}
+
+.valor-option.selected {
+    border-color: #FFD700;
+    background-color: rgba(255,215,0,0.2);
+}
+
+.valor-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.valor-label {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+}
+
+.metodo-option {
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid transparent;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.metodo-option:hover {
+    background-color: rgba(255,255,255,0.15);
+    transform: scale(1.05);
+}
+
+.metodo-option.selected {
+    border-color: #4CFF00;
+    background-color: rgba(76,255,0,0.2);
+}
+
+.metodo-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.metodo-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.metodo-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 5px;
+}
+
+.resumo-recarga {
+    background-color: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.resumo-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.resumo-item:last-child {
+    border-bottom: none;
+}
+
+.resumo-label {
+    color: rgba(255,255,255,0.8);
+}
+
+.resumo-valor {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.btn-confirmar {
+    background-color: #4CFF00;
+    color: #333;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-confirmar:hover:not(:disabled) {
+    background-color: #3dd700;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76, 255, 0, 0.4);
+}
+
+.btn-confirmar:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.success-message {
+    display: none;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.success-message.show {
+    display: block;
+    animation: slideIn 0.5s ease-in;
+}
+
+.success-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-custom {
+    background-color: rgba(255,215,0,0.1);
+    border-left: 4px solid #FFD700;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.info-custom strong {
+    color: #FFD700;
+}
+
+.btn-voltar {
+    margin-top: 20px;
+}

@@ -1,0 +1,86 @@
+/* ===============================================
+   LAYOUT.CSS - Estilos de Layout e Utilidades
+   ===============================================
+   Arquivo: Estilos aplicados em múltiplas páginas
+   Responsável por: Layout, dimensões, espaçamento
+   =============================================== */
+
+/* ========== Footer Comum ========== */
+footer {
+    background-color: #f8f9fa;
+    margin-top: 5rem;
+}
+
+footer .text-center.p-3 {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ========== Body Heights ========== */
+body.full-height {
+    height: 100vh;
+}
+
+/* ========== Card Customizations ========== */
+.card.login-card {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ========== Display None (Dinâmico) ========== */
+.hidden {
+    display: none;
+}
+
+.hidden.show {
+    display: block;
+}
+
+/* ========== Icon Sizing ========== */
+.icon-small {
+    font-size: 1.2rem;
+}
+
+.icon-medium {
+    font-size: 1.5rem;
+}
+
+.icon-large {
+    font-size: 2rem;
+}
+
+.icon-xlarge {
+    font-size: 3rem;
+}
+
+/* ========== Color Utilities ========== */
+.text-golden {
+    color: #FFD700;
+}
+
+.text-lime {
+    color: #4CFF00;
+}
+
+.text-success-dark {
+    color: #28a745;
+}
+
+/* ========== Spacing Utilities ========== */
+.mt-custom {
+    margin-top: 2rem;
+}
+
+.mb-custom {
+    margin-bottom: 2rem;
+}
+
+/* ========== Responsive Utilities ========== */
+@media (max-width: 768px) {
+    .card.login-card {
+        max-width: 90%;
+    }
+    
+    footer .text-center.p-3 {
+        font-size: 0.9rem;
+    }
+}
