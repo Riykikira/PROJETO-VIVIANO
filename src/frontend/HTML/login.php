@@ -1,3 +1,35 @@
+
+<?php
+include '../PHP/conexao.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!isset($_POST['email']) || empty($_POST['email']))  {
+        echo "Email ou usuário não informado!";
+    } else if (!isset($_POST['senha']) || empty($_POST['senha']))  {
+        echo "Senha não informada!";
+    } else {
+        $email =  $mysqli->real_escape_string($_POST['email']);
+        $senha =  $mysqli->real_escape_string($_POST['senha']);
+        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+        if ($sql_query->num_rows == 1) {
+            $usuario = $sql_query->fetch_assoc();
+            if (!isset($_SESSION)) {
+                session_start();
+            }
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+            header("Location: portal-estudante.html");
+        } else {
+            echo "Email ou senha inválidos!";
+        }
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,14 +46,14 @@
             <h3 class="text-primary">UNINASSAU S.A</h3>
             <p class="text-muted">Acesso ao Sistema</p>
         </div>
-        <form action="dashboard.html">
+        <form action="login.php" method="POST">
             <div class="mb-3">
                 <label for="email" class="form-label">E-mail ou Usuário</label>
-                <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="password" required>
+                <input type="password" class="form-control" id="password" name="senha" required>
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="remember">
@@ -41,5 +73,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
